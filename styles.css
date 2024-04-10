@@ -1,11 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(34, 34, 34);
     color: white;
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
-    font-family: "Poppins", sans-serif;
-    overflow: hidden;
+    font-family: "Poppins", sans-serif; 
 }
 
 header {
@@ -18,6 +23,10 @@ header {
 .title {
     flex-direction: column;
     line-height: 10px;
+}
+
+.menu-list {
+    display: none;
 }
 
 ul {
@@ -111,4 +120,212 @@ input {
 
 input:focus {
     outline: none;
+}
+
+@media screen and (max-width: 1200px) {
+
+    h1 {
+        line-height: 45px;
+    }
+
+    ul {
+        margin-right: 200px;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        line-height: 45px;
+    }
+
+    img {
+        margin-left: 65px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .title {
+        margin-left: 30px;
+    }
+
+   main {
+        display: flex;
+        flex-direction: row;
+   }
+
+   aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   }
+
+}
+
+@media screen and (max-width: 930px) {
+
+    ul {
+        margin-right: 40px;
+    }
+
+    aside {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .title {
+        margin-left: 45px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: end;
+        margin-right: 20px;
+      }
+    
+      .navbar-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    
+        width: 50%;
+        height: 100%;
+    
+        position: fixed;
+        right: 0;
+        top: 0;
+        background: #333;
+        clip-path: circle(100px at 90% -20%);
+    
+        pointer-events: none;
+        transition: .6s ease-out;
+      }
+    
+      .menu-list {
+        display: block;
+    
+        padding: 0;
+        margin-bottom: .4rem;
+        border: none;
+        border-top: 3px solid #ffffff;
+    
+        background: transparent;
+        transition: all .3s ease-in-out;
+    
+        z-index: 1;
+      }
+    
+      .menu-list:hover {
+        opacity: .8;
+        cursor: pointer;
+      }
+    
+      .menu-list::before,
+      .menu-list::after {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 3px;
+    
+        margin-top: .6rem;
+    
+        background: white;
+      }
+
+       /* ATIVO */
+
+    .navbar.active .navbar-links {
+        clip-path: circle(1400px at 90% -18%);
+        pointer-events: all;
+      }
+    
+      .navbar.active .menu-list {
+        border-top-color: transparent;
+      }
+    
+      .navbar.active .menu-list::before {
+        transition: all .2s ease-in-out;
+        transform: rotate(-45deg) translate(-4px, -1px);
+      }
+    
+      .navbar.active .menu-list::after {
+        transition: all .2s ease-in-out;
+        transform: rotate(45deg) translate(-10px, -5px);
+      }
+}
+
+@media screen and (max-width: 600px) {
+
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    article {
+        margin-left: -95px;
+        width: 450px;
+    }
+
+    form [type="submit"] {
+        margin-left: 92px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .title {
+        font-size: 13px;
+    }
+
+    aside {
+        font-size: 14px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    article {
+        width: 380px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .title {
+        font-size: 10px;
+    }
+
+    aside {
+        font-size: 11px;
+    }
+
+    input {
+        font-size: 11px;
+    }
+
+    article {
+        width: 300px;
+    }
+
+    p {
+        margin: 5px 15px 5px 15px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    form [type="submit"] {
+        margin-left: 66px;
+    }
 }
