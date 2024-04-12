@@ -122,6 +122,17 @@ input:focus {
     outline: none;
 }
 
+@media screen and (min-width: 1200px) {
+
+    h1 {
+        line-height: 50px;
+    }
+
+    h2 {
+        line-height: 55px;
+    }
+}
+
 @media screen and (max-width: 1200px) {
 
     h1 {
